@@ -6,7 +6,7 @@ function clearer(){
 }
 function adder(k){
     valEl.innerText += k
-    if(k=='*' || k=='+' || k=='-' || k=='/'){
+    if(k=='*' || k=='+' || k=='-' || k=='/' ||k=='^'){
         compute(0)
     }
 }
@@ -14,7 +14,7 @@ function compute(is){
     let temp = valEl.innerText, i
     let t = temp[temp.length-1];
     for(i=0;i<temp.length-1;i++){
-        if((temp[i]=='*' || temp[i]=='+' || temp[i]=='-' || temp[i]=='/') && i!=0){
+        if((temp[i]=='*' || temp[i]=='+' || temp[i]=='-' || temp[i]=='/' ||temp[i]=='^') && i!=0){
             break;
         }
     }
@@ -28,7 +28,11 @@ function compute(is){
             resEl.innerText = (part1)-(part2);
         }else if(k5=='*'){
             resEl.innerText = (part1)*(part2);
-        }else{
+        }
+        else if(k5=='^'){
+            resEl.innerText=Math.pow(part1,part2);
+        }
+        else{
             resEl.innerText = (part1)/(part2);
         }
         resEl.innerText = '= ' + resEl.innerText
