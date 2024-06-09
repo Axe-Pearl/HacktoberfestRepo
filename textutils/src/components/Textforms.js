@@ -56,7 +56,9 @@ export default function Textforms(props) {
     </p>
     
         <h4 style={{color:props.mode==='dark'?'white':'#352F44'}}>preview</h4>
-        {text}
+        <p style={{color: props.mode === 'dark' ? 'white' : '#352F44'}}>
+            {text}
+        </p>
  </div></>
     
   )
