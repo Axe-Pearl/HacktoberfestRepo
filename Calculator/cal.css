@@ -11,19 +11,19 @@ button{
     width: 200px;
     height: 50px;
     margin: 2px 2px;
-    background-color: blue;
-    color: #fff4a7;
+    background-color: white;
+    color:black;
     border-radius: 20px;
     font-weight: bolder;
     font-style: italic;
     font-size: larger;
 }
 #outside{
-    color: white;
+    color:white;
     border-radius: 5px;
     margin: auto;
     margin-top: 100px;
-    width: 1000px;
+    width: 80%;
     height: 600px;
     padding: 5px;
 }
@@ -39,6 +39,7 @@ button{
 }
 .btn-inside{
     width: 900px;
+    
 }
 #val{
     /* border: 2px solid red; */
