@@ -1,64 +1,88 @@
-body{
+body {
     background-image: url(c10.jpg);
     background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background-position: center;
     background-size: cover;
-}
-button{
-    width: 200px;
-    height: 50px;
-    margin: 2px 2px;
-    background-color: blue;
-    color: #fff4a7;
-    border-radius: 20px;
-    font-weight: bolder;
-    font-style: italic;
-    font-size: larger;
-}
-#outside{
-    color: white;
-    border-radius: 5px;
-    margin: auto;
-    margin-top: 100px;
-    width: 1000px;
-    height: 600px;
-    padding: 5px;
-}
-#heading{
-    margin: auto;
-    width: 412px;
-    font-size: xxx-large;
-}
-#btn{
-    margin: auto;
-    margin-top: 20px;
-    width: 815px;
-}
-.btn-inside{
-    width: 900px;
-}
-#val{
-    /* border: 2px solid red; */
-    height: 55px;
-    width: 783px;
-    margin-left: 100px;
-    color: white;
-    padding-left: 37px;
-    padding-top: 20px;
-    font-weight: bolder;
-}
-#res{
-    /* border: 2px solid red; */
-    height: 50px;
-    width: 783px;
-    margin-left: 100px;
-    color: white;
-    padding-left: 37px;
-    padding-top: 25px;
-    font-weight: bolder;
-    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
 }
 
+.container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    color: white;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#heading {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.display {
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+#val {
+    font-size: 2rem;
+    margin: 0;
+    min-height: 2.5rem;
+}
+
+#res {
+    font-size: 1.5rem;
+    margin: 0;
+    min-height: 2rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    background-color: #0066cc;
+    border: none;
+    border-radius: 5px;
+    color: #fff4a7;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #004c99;
+}
+
+button:active {
+    background-color: #003366;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+}
