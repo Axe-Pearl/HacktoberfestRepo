@@ -71,7 +71,16 @@ hr{
 #line{
     color: #D5D4D8;
 }
-
+#pass{
+    color: #D5D4D8;
+}
+#len {
+    border-radius: 15px;
+    border: 3px solid #55F991;
+    padding: 20px;
+    width: 150px;
+    height: 0px;
+  }
 .password-container{
     display: flex;
     
