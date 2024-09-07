@@ -1,64 +1,98 @@
-body{
+/* Ensure the entire body takes up the full viewport */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     background-image: url(c10.jpg);
     background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
     background-position: center;
     background-size: cover;
 }
-button{
-    width: 200px;
+
+/* Center and adjust the calculator container */
+#outside {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90vw; /* Use viewport width for responsiveness */
+    max-width: 400px; /* Cap the maximum width */
+    height: auto;
+    text-align: center;
+}
+
+/* Responsive heading */
+#heading {
+    
+    font-size: clamp(2rem, 2vw, 4rem);
+    margin-bottom: 20px;
+}
+
+/* Input display */
+#val, #res {
+    background-color: #333;
+    padding: 10px;
+    font-size: 2vw;
+    min-height: 50px;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Button container */
+#btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+/* Each row of buttons */
+.btn-inside {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* Style the buttons */
+button {
+    width: 20%; /* Percentage-based width to make buttons responsive */
+    max-width: 80px; /* Set a maximum size for buttons */
     height: 50px;
-    margin: 2px 2px;
     background-color: blue;
     color: #fff4a7;
     border-radius: 20px;
     font-weight: bolder;
     font-style: italic;
-    font-size: larger;
-}
-#outside{
-    color: white;
-    border-radius: 5px;
-    margin: auto;
-    margin-top: 100px;
-    width: 1000px;
-    height: 600px;
-    padding: 5px;
-}
-#heading{
-    margin: auto;
-    width: 412px;
-    font-size: xxx-large;
-}
-#btn{
-    margin: auto;
-    margin-top: 20px;
-    width: 815px;
-}
-.btn-inside{
-    width: 900px;
-}
-#val{
-    /* border: 2px solid red; */
-    height: 55px;
-    width: 783px;
-    margin-left: 100px;
-    color: white;
-    padding-left: 37px;
-    padding-top: 20px;
-    font-weight: bolder;
-}
-#res{
-    /* border: 2px solid red; */
-    height: 50px;
-    width: 783px;
-    margin-left: 100px;
-    color: white;
-    padding-left: 37px;
-    padding-top: 25px;
-    font-weight: bolder;
-    font-size: x-large;
+    font-size: 1.5vw; /* Relative to viewport width */
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
+/* Add hover effect for buttons */
+button:hover {
+    background-color: darkblue;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 600px) {
+    #outside {
+        width: 95vw;
+    }
+    
+    #heading {
+        font-size: 8vw;
+    }
+
+    button {
+        width: 22%;
+        height: 45px;
+        font-size: 2vw;
+    }
+}
