@@ -46,6 +46,12 @@ input:focus{
   width: 70px;
 }
 
+.btn-addTodo:disabled {
+  cursor: not-allowed; /* Removes the pointer style */
+  background-color: #ccc; /* Optional: make background lighter */
+  color: red; /* Make text red when disabled */
+}
+
 .todo {
   width: 300px;
   padding: 10px;

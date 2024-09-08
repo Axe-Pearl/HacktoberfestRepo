@@ -49,12 +49,14 @@ const Home = () => {
         localStorage.setItem('todos', JSON.stringify(todos))
     },[todos])
 
+    const isSubmitDisabled = todo.trim() === '';
+
     return (
     <div className='home'>
       <div className='container'>
           <form className='todo-form' onSubmit={addTodo}>
             <input type="text" placeholder='Add item...' value={todo} onChange={(e) => setTodo(e.target.value)}/>
-            <input type='button' onClick={addTodo} className='btn-addTodo' value='Add' />
+            <input type='button' onClick={addTodo} className='btn-addTodo' value='Add' disabled={isSubmitDisabled} />
           </form>
           {
                 todos.length? (
