@@ -107,7 +107,25 @@ input:focus{
   border-radius: 999px;
   transform: translateY(10px) rotate(-45deg);
 }
-
+.input{
+  width: 100%;
+}
+.parentInBt{
+  width: 98px;
+}
+.editBtn{
+  margin: 6px;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background-color: #1DA1F2;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  width: 70px;
+}
 .remove::before {
   position: absolute;
   content:'';
