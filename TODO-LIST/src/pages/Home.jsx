@@ -21,7 +21,11 @@ const Home = () => {
             setTodo('')
         }
     }
-
+    const editTitle = (Etext , id) =>{
+        let index = todos.findIndex(t => t.id === id);
+        todos[index].text =  Etext === ""? todos[index].text:Etext;
+        setTodos([...todos]);
+    }
     const deleteTodo = (id) => {
         setTodos(prev => prev.filter(t => t.id !== id))
     }
@@ -61,13 +65,14 @@ const Home = () => {
             <div className='todo-list'>
                 {
                     todos.map((todo,index) => {
-                        return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} moveUp={moveUp} moveDown = {moveDown} total = {todos.length} index={index}/>
+                        return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} moveUp={moveUp} moveDown = {moveDown} total = {todos.length} index={index} editTitle={editTitle}/>
                     })
                 }
             </div> ) : <p style={{textAlign:'center', marginTop:'10px', fontWeight:'bold'}}>No todo...</p>
 
           }
       </div>
+      
     </div>
   )
 }
