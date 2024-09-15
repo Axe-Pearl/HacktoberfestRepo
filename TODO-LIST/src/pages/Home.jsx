@@ -10,7 +10,7 @@ const getTodos = () => {
     return []
 }
 
-const Home = () => {
+const Home = (props) => {
     const [todos, setTodos] = useState(getTodos())
     const [todo, setTodo] = useState('')
 
@@ -24,6 +24,10 @@ const Home = () => {
 
     const deleteTodo = (id) => {
         setTodos(prev => prev.filter(t => t.id !== id))
+    }
+
+    const updateTodo = (id, newText) => {
+        setTodos(prev => prev.map(todo => todo.id === id ? { ...todo, text: newText } : todo));
     }
 
     const moveUp = (id) => {
@@ -55,13 +59,14 @@ const Home = () => {
           <form className='todo-form' onSubmit={addTodo}>
             <input type="text" placeholder='Add item...' value={todo} onChange={(e) => setTodo(e.target.value)}/>
             <input type='button' onClick={addTodo} className='btn-addTodo' value='Add' />
+            
           </form>
           {
                 todos.length? (
             <div className='todo-list'>
                 {
                     todos.map((todo,index) => {
-                        return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} moveUp={moveUp} moveDown = {moveDown} total = {todos.length} index={index}/>
+                        return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} updateTodo={updateTodo} moveUp={moveUp} moveDown = {moveDown} total = {todos.length} index={index}/>
                     })
                 }
             </div> ) : <p style={{textAlign:'center', marginTop:'10px', fontWeight:'bold'}}>No todo...</p>
