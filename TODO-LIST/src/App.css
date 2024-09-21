@@ -46,6 +46,13 @@ input:focus{
   width: 70px;
 }
 
+.btn-addTodo.disabled{
+  background-color: rgb(175, 173, 177);
+  color: black;
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
 .todo {
   width: 300px;
   padding: 10px;
