@@ -2,6 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Installation
+In the project directory, create a virtual enviornment with:
+    python -m venv (virtual enviornment name)
+
+Navigate into the virtual enviornment folder
+    cd (virtual enviornment folder name here)
+
+Activate the virtual enviornment:
+    -bash: .\Scripts\activate
+    -OSx/Linux: source ./bin/activate
+
+Install dependencies:
+    npm install
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,11 +1,14 @@
-# A minimal analog clock using HTML, CSS and JavaScript.
+# A simple password generator built using HTML, JavaScript, and CSS that helps users create two strong, random passwords. The app also includes a feature for switching between light and dark themes for better user experience.
+
+# Features
+#    Password Generation: Generate strong, random passwords with configurable length and character options (uppercase, lowercase, numbers, and symbols).
+#    Light & Dark Mode: Toggle between light and dark themes for comfortable use in different lighting conditions.
 
 # Prerequisites
-
 # Before getting started, ensure that you have the following software installed on your machine:
-# Git: For version control and managing the project.
-# A code editor: Such as Visual Studio Code.
-# A browser: To view the app (Chrome, Firefox, Safari, etc.).
+    # Git: For version control and managing the project.
+    # A code editor: Such as Visual Studio Code.
+    # A browser: To view the app (Chrome, Firefox, Safari, etc.).
 
 
 # Forking and Cloning the Repository
@@ -21,7 +24,6 @@
 
 
 # Installation Instructions
-
 # No special installation is required for this project, as it uses standard web technologies (HTML, CSS, JavaScript). Simply open the HTML file in a web browser to start using the app.
 
 
@@ -30,6 +32,8 @@
 # Open the index.html file:
 #     You can open it in any modern web browser (Chrome, Firefox, etc.).
 #     Double-click the file, or run .\index.html in your console.
+# To use the password generator, simply click the 'Generate Password' button, and two passwords will appear on-screen.
+# Use the theme toggle switch to switch between light and dark modes for the app's interface.
 
 # Contributing
 # We welcome contributions! If you'd like to contribute to this project, please follow these steps:
