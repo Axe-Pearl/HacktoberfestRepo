@@ -10,17 +10,23 @@ const getTodos = () => {
     return []
 }
 
+const getSort = () =>{
+    let sort=localStorage.getItem('sort');
+    return sort ? sort : true;
+}
+
 const Home = () => {
     const [todos, setTodos] = useState(getTodos())
     const [todo, setTodo] = useState('')
+    const [oldfirst, setOldfirst]= useState(getSort());
 
     const addTodo = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const current = new Date();
-        const currentDateTime = current.toLocaleString('default', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', second: '2-digit'});
+        const currentDateTime = current.toISOString();
         if (todo && todos.findIndex(t => t.text === todo) === -1) {
-            setTodos(prev => [...prev, {id:nanoid(),text:todo,createdAt:currentDateTime}])
-            setTodo('')
+            setTodos(prev => [...prev, { id: nanoid(), text: todo, createdAt: currentDateTime }]);
+            setTodo('');
         }
     }
 
@@ -47,6 +53,18 @@ const Home = () => {
             setTodos([...todos])
         }
     }
+
+    const handleDateSort = () => {
+        let sortedTodos = [...todos];
+        if (oldfirst) {
+            sortedTodos.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        } else {
+            sortedTodos.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        }
+        setTodos(sortedTodos);
+        setOldfirst(!oldfirst);
+        localStorage.setItem('sort',!oldfirst);
+    };
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos))
     },[todos])
@@ -58,6 +76,7 @@ const Home = () => {
             <input type="text" placeholder='Add item...' value={todo} onChange={(e) => setTodo(e.target.value)}/>
             <input type='button' onClick={addTodo} className='btn-addTodo' value='Add' />
           </form>
+          <div style={{width:'300px',fontWeight:700}} className='btn-addTodo' onClick={handleDateSort} >{oldfirst ?'Oldest To Newest' : 'Newest To Oldest'}</div>
           {
                 todos.length? (
             <div className='todo-list'>
