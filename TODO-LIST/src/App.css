@@ -119,3 +119,8 @@ input:focus{
   border-radius: 999px;
   transform: translateY(-10px) rotate(45deg);
 }
+
+.column{
+  display: 'flex';
+  flex-direction:'column';
+}

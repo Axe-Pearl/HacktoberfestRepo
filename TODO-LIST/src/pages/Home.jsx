@@ -16,8 +16,10 @@ const Home = () => {
 
     const addTodo = (e) => {
         e.preventDefault()
+        const current = new Date();
+        const currentDateTime = current.toLocaleString('default', {day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', second: '2-digit'});
         if (todo && todos.findIndex(t => t.text === todo) === -1) {
-            setTodos(prev => [...prev, {id:nanoid(),text:todo}])
+            setTodos(prev => [...prev, {id:nanoid(),text:todo,createdAt:currentDateTime}])
             setTodo('')
         }
     }
