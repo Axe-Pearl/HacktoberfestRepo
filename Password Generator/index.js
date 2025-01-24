@@ -47,3 +47,46 @@ const displayPassword = () => {
 };
 
 document.getElementById("btn").addEventListener("click", displayPassword);
+
+
+
+function copyToClipboard() {
+  let passwordField = document.getElementById("Password1");
+  
+  if (passwordField.value) {  
+      passwordField.select(); // Select the text
+      document.execCommand("copy"); // Copy the text
+      let copyMsg = document.getElementsByClassName("copy_password");
+      copyMsg.style.display = "inline"; // Show "Copied!" message
+      
+      setTimeout(() => {
+          copyMsg.style.display = "none"; // Hide message after 2 seconds
+      }, 2000);
+  }
+}
+
+
+// document.querySelectorAll.(".copy_password").addEventListener("click", function () {
+//   // Find the text you want to copy (modify selector accordingly)
+//   const textToCopy = document.querySelector(".Password1").innerText || document.querySelector(".Password2").innerText;
+//   // Copy the text to clipboard
+//   navigator.clipboard.writeText(textToCopy).then(() => {
+//       alert("Copied to clipboard!"); // Optional: Show confirmation
+//   }).catch(err => {
+//       console.error("Failed to copy:", err);
+//   });
+// });
+
+document.querySelectorAll(".copy_password").forEach(button => {
+  button.addEventListener("click", function () {
+      // Find the closest password element
+      const textToCopy = this.previousElementSibling.innerText || this.previousElementSibling.value;
+      
+      // Copy to clipboard
+      navigator.clipboard.writeText(textToCopy).then(() => {
+          alert("Copied: " + textToCopy); // Optional feedback
+      }).catch(err => {
+          console.error("Failed to copy:", err);
+      });
+  });
+});
