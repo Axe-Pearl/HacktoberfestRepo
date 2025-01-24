@@ -134,3 +134,17 @@ input:checked + .slider:before {
 .slider.round:before{
     border-radius: 50%;
 }
+
+.copy_password{
+    height:fit-content;
+    width:fit-content;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 12px;
+    margin-right:29px;
+}
+.copy_password:hover{
+    background-color: #10B981;
+    border:none;
+}
+
