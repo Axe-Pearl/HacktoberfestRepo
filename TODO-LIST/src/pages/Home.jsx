@@ -45,6 +45,7 @@ const Home = () => {
             setTodos([...todos])
         }
     }
+
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos))
     },[todos])
@@ -54,7 +55,13 @@ const Home = () => {
       <div className='container'>
           <form className='todo-form' onSubmit={addTodo}>
             <input type="text" placeholder='Add item...' value={todo} onChange={(e) => setTodo(e.target.value)}/>
-            <input type='button' onClick={addTodo} className='btn-addTodo' value='Add' />
+            <input 
+                type='button' 
+                onClick={addTodo} 
+                className='btn-addTodo' 
+                value='Add' 
+                disabled={!todo} 
+            />
           </form>
           {
                 todos.length? (
@@ -65,7 +72,6 @@ const Home = () => {
                     })
                 }
             </div> ) : <p style={{textAlign:'center', marginTop:'10px', fontWeight:'bold'}}>No todo...</p>
-
           }
       </div>
     </div>
