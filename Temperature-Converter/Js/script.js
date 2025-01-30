@@ -7,11 +7,12 @@ const tempLoad = () => {
 
     setTimeout(() => {
         fa.innerHTML = "&#xf2ca;";
-        fa.style.color = "#ffa41b";
+        fa.style.color = "#00ffff";
     }, 1000)
 
     setTimeout(() => {
         fa.innerHTML = "&#xf2c9;";
+        fa.style.color = "#32cd32"
     }, 2000)
 
     setTimeout(() => {
